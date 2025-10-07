@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb17f4a2bcc154e4cb82fc2f85a34141, type: 3}
+  m_Name: EnemyBow
+  m_EditorClassIdentifier: Assembly-CSharp::RPG.Combat.Weapon
+  weaponPrefab: {fileID: 2182806426061008115, guid: 45b2700f94a9bdb488576fa8a1583754, type: 3}
+  weaponOverride: {fileID: 22100000, guid: 725ed38cafd9d0448b6416fe2fb9b10a, type: 2}
+  weaponRange: 10
+  timeBetweenAttack: 1
+  weaponDamage: 20
+  isRightHand: 0
+  projectile: {fileID: 4242797130713071200, guid: f4a4bbf983ce02f459eb0b1061388240, type: 3}
