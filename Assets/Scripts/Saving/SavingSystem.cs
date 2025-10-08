@@ -1,13 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using Mono.Cecil;
-using NUnit.Framework.Interfaces;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace RPG.Saving
@@ -17,15 +11,13 @@ namespace RPG.Saving
         const string sceneIndexString = "lastSceneBuildIndex";
         public IEnumerator LoadLastScene(string saveFile)
         {
+            int sceneIndex = (int)SceneManager.GetActiveScene().buildIndex;
             Dictionary<string, object> state = LoadFile(saveFile);
             if (state.ContainsKey(sceneIndexString))
             {
-                int sceneIndex = (int)state[sceneIndexString];
-                if (sceneIndex != SceneManager.GetActiveScene().buildIndex)
-                {
-                    yield return SceneManager.LoadSceneAsync(sceneIndex);
-                }
+                sceneIndex = (int)state[sceneIndexString];
             }
+            yield return SceneManager.LoadSceneAsync(sceneIndex);
             RestoreState(state);
         }
         public void Save(string saveFile)
@@ -40,7 +32,11 @@ namespace RPG.Saving
         {
             RestoreState(LoadFile(saveFile));
         }
-
+        public void Delete(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            File.Delete(path);
+        }
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);

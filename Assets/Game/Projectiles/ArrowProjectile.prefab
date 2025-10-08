@@ -207,9 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94ad580d82e64f4f9b677257b957596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 2
+  speed: 25
   heatSeeking: 0
   hitEffect: {fileID: 2536805696629194685, guid: d1861f840fc6fd44f8434e166be865d9, type: 3}
+  maxLifeTime: 10
+  lifeAfterImpact: 0
+  destroyOnHit: []
 --- !u!136 &-2010330000564856515
 CapsuleCollider:
   m_ObjectHideFlags: 0

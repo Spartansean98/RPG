@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using RPG.Saving;
 using UnityEngine;
@@ -8,12 +9,17 @@ namespace RPG.SceneManagement
         const string defaultSaveFile = "save";
         [SerializeField] float fadeInTime = 0.5f;
         [SerializeField] float fadeWaitTime = 0.5f;
-        private IEnumerator Start()
+        void Awake()
         {
+            StartCoroutine(LoadLastScene());
+        }
+        
+        private IEnumerator LoadLastScene()
+        {
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+
             Fader fader = FindFirstObjectByType<Fader>();
             fader.FadeOutImmediate();
-
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
 
             yield return new WaitForSeconds(fadeWaitTime);
 
@@ -31,6 +37,16 @@ namespace RPG.SceneManagement
             {
                 Load();
             }
+            if (Input.GetKeyDown(KeyCode.Delete))
+            {
+                print("Deleted Save File");
+                Delete();
+            }
+        }
+
+        private void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
 
         public void Load()

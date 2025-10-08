@@ -1,8 +1,8 @@
-using System;
 using RPG.Core;
 using RPG.Saving;
 using UnityEngine;
 using UnityEngine.AI;
+using RPG.Attributes;
 
 namespace RPG.Movement
 {
@@ -11,7 +11,7 @@ namespace RPG.Movement
         [SerializeField] float maxSpeed = 6.0f;
         NavMeshAgent navMeshAgent;
         Health health;
-        void Start()
+        void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();

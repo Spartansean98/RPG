@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: hp
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6700430646738420706, guid: 55e85e3627448a64abb60615a211895e, type: 3}
+      propertyPath: characterClass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302791391674479620, guid: 55e85e3627448a64abb60615a211895e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

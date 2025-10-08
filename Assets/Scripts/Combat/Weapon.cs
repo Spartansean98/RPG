@@ -1,7 +1,4 @@
-using System;
-using RPG.Core;
-using Unity.VisualScripting;
-using UnityEditor.Build.Content;
+using RPG.Attributes;
 using UnityEngine;
 
 namespace RPG.Combat{
@@ -13,7 +10,8 @@ namespace RPG.Combat{
         [SerializeField] AnimatorOverrideController weaponOverride = null;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttack = 1f;
-        [SerializeField] float weaponDamage = 1f;
+        [SerializeField] float weaponDamage = 0;
+        [SerializeField] float weaponPercentageBonus = 1f;
         [SerializeField] bool isRightHand = true;
         [SerializeField] Projectile projectile = null;
         const string weaponName = "Weapon";
@@ -34,8 +32,8 @@ namespace RPG.Combat{
                 animator.runtimeAnimatorController = weaponOverride;
             }
             else if (overrideController != null)
-            { 
-            animator.runtimeAnimatorController = overrideController.runtimeAnimatorController; 
+            {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
         }
 
@@ -63,10 +61,10 @@ namespace RPG.Combat{
         {
             return projectile != null;
         }
-        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target,Health archer)
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instagator, float calculatedDamage)
         {
             Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-            projectileInstance.SetTarget(target,weaponDamage,archer);
+            projectileInstance.SetTarget(target, calculatedDamage, instagator);
         }
         public float GetRange()
         {
@@ -79,6 +77,10 @@ namespace RPG.Combat{
         public float GetDamage()
         {
             return weaponDamage;
+        }
+        public float GetPercentageBonusDamage()
+        {
+            return weaponPercentageBonus;
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
-using RPG.Core;
+using RPG.Attributes;
 
 namespace RPG.Control
 {
@@ -10,7 +10,7 @@ namespace RPG.Control
         Health health;
         [Range(0,2)]
         [SerializeField] float runSpeed = 1;
-        void Start()
+        void Awake()
         {
             health = GetComponent<Health>();
         }

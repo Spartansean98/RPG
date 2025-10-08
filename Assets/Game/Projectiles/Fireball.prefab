@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94ad580d82e64f4f9b677257b957596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 5
+  speed: 9
   heatSeeking: 1
   hitEffect: {fileID: 9141354887552307369, guid: c084cf235a488b544aa073b2f68cc2ce, type: 3}
   maxLifeTime: 10

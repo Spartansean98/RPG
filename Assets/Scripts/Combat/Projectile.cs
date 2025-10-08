@@ -1,4 +1,4 @@
-using RPG.Core;
+using RPG.Attributes;
 using UnityEngine;
 namespace RPG.Combat
 {
@@ -14,7 +14,9 @@ namespace RPG.Combat
         float damage = 0;
 
         Health target = null;
-        Health archer = null;
+
+        GameObject instigator = null;
+
         bool hasTarget = false;
 
         // Update is called once per frame
@@ -31,11 +33,11 @@ namespace RPG.Combat
             }
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
-        public void SetTarget(Health target, float damage, Health archer)
+        public void SetTarget(Health target, float damage,GameObject instigator)
         {
             this.target = target;
             this.damage = damage;
-            this.archer = archer;
+            this.instigator = instigator;
             Destroy(gameObject, maxLifeTime);
         }
         private Vector3 GetAimLocation()
@@ -51,13 +53,13 @@ namespace RPG.Combat
             if (targetHealth != null)
             {
                 if (targetHealth.IsDead()) return;
-                if (targetHealth != archer)
+                if (targetHealth != instigator.GetComponent<Health>())
                 {
                     speed = 0;
-                    targetHealth.TakeDamage(damage);
+                    targetHealth.TakeDamage(instigator,damage);
                     if (hitEffect != null)
                     {
-                        Instantiate(hitEffect, other.transform.position, transform.rotation);
+                        Instantiate(hitEffect, transform.position, transform.rotation);
                     }
                     foreach (GameObject toDestroy in destroyOnHit)
                     {

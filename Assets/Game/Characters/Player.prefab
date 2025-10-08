@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: hp
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 6700430646738420706, guid: 55e85e3627448a64abb60615a211895e, type: 3}
+      propertyPath: startingLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700430646738420706, guid: 55e85e3627448a64abb60615a211895e, type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302791391674479620, guid: 55e85e3627448a64abb60615a211895e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -124,6 +132,9 @@ PrefabInstance:
       addedObject: {fileID: 5391870584168187155}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7569957123790554459, guid: 55e85e3627448a64abb60615a211895e, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 3810040702409012124}
+    - targetCorrespondingSourceObject: {fileID: 7569957123790554459, guid: 55e85e3627448a64abb60615a211895e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7235380960646679147}
     - targetCorrespondingSourceObject: {fileID: 7569957123790554459, guid: 55e85e3627448a64abb60615a211895e, type: 3}
@@ -140,6 +151,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7569957123790554459, guid: 55e85e3627448a64abb60615a211895e, type: 3}
   m_PrefabInstance: {fileID: 4106698242164287031}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3810040702409012124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904236353957471084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4d116ba4e80aa4e967c6ad99e56abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RPG.Attributes.Experience
+  experiencePoints: 0
 --- !u!114 &7235380960646679147
 MonoBehaviour:
   m_ObjectHideFlags: 0

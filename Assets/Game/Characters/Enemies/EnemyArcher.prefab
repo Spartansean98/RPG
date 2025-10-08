@@ -16,9 +16,13 @@ PrefabInstance:
       propertyPath: chaseDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1427149557578194528, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
+      propertyPath: characterClass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2755944860392921305, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
       propertyPath: m_Name
-      value: Archer
+      value: EnemyArcher
       objectReference: {fileID: 0}
     - target: {fileID: 4015436818340068248, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
       propertyPath: defaultweapon
