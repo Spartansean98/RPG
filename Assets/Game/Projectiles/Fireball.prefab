@@ -50,6 +50,10 @@ MonoBehaviour:
   speed: 5
   heatSeeking: 1
   hitEffect: {fileID: 9141354887552307369, guid: c084cf235a488b544aa073b2f68cc2ce, type: 3}
+  maxLifeTime: 10
+  lifeAfterImpact: 0.2
+  destroyOnHit:
+  - {fileID: 8960357244131643543}
 --- !u!136 &-2010330000564856515
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -99,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960357244131643543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.32825, y: 0.32825, z: 0.32825}
   m_ConstrainProportionsScale: 0

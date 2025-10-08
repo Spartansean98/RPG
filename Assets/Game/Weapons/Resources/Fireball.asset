@@ -16,6 +16,6 @@ MonoBehaviour:
   weaponOverride: {fileID: 22100000, guid: 84b1f5f20d5a54e458ef1e80d3233794, type: 2}
   weaponRange: 20
   timeBetweenAttack: 1
-  weaponDamage: 1
+  weaponDamage: 20
   isRightHand: 0
   projectile: {fileID: 7555815467028205216, guid: 2251a53e6ea6c0848ae35ebb16d7eaeb, type: 3}

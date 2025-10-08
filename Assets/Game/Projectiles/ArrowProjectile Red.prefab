@@ -72,8 +72,21 @@ PrefabInstance:
       propertyPath: speed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7555815467028205216, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
+      propertyPath: destroyOnHit.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555815467028205216, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
+      propertyPath: 'destroyOnHit.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1390601526866808658}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
+--- !u!1 &1390601526866808658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4717167772800368530, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
+  m_PrefabInstance: {fileID: 5925285343341097152}
+  m_PrefabAsset: {fileID: 0}

@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9141354887552307369, guid: c084cf235a488b544aa073b2f68cc2ce, type: 3}
       propertyPath: m_Name
-      value: FireballHit Variant
+      value: BloodSplatter
       objectReference: {fileID: 0}
+    - target: {fileID: 9141354887571511101, guid: c084cf235a488b544aa073b2f68cc2ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ff059fc016fcf8d4a88162b27e334cba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

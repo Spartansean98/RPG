@@ -3228,6 +3228,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4586017751219601307, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5643991526907645241, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.325356
@@ -3271,6 +3275,26 @@ PrefabInstance:
     - target: {fileID: 5812580016454410912, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
       propertyPath: uniqueIdentifier
       value: 4d5a51c9-da37-4bc0-9fd1-92255074090e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426956953452513457, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_Height
+      value: 2.0018218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426956953452513457, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_Radius
+      value: 0.35797328
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426956953452513457, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_Center.x
+      value: 0.054235637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426956953452513457, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_Center.y
+      value: 0.93091094
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426956953452513457, guid: 6e47d56aea67d90449fb423b5fb5bc27, type: 3}
+      propertyPath: m_Center.z
+      value: -0.20874327
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5970,7 +5994,7 @@ PrefabInstance:
     - target: {fileID: 4080613657040360186, guid: db8092f97fb936346b32ba48b62c3e40, type: 3}
       propertyPath: defaultweapon
       value: 
-      objectReference: {fileID: 11400000, guid: b93b4e6e4c7888c4faa2f87bd6a0e006, type: 2}
+      objectReference: {fileID: 11400000, guid: dcba0b88b6ae5f04e8ed12d78b554c26, type: 2}
     - target: {fileID: 7619661761551266504, guid: db8092f97fb936346b32ba48b62c3e40, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.655174

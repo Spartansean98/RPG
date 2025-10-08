@@ -1,9 +1,10 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.Saving;
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
 
         [Range(0,1)]
@@ -17,7 +18,11 @@ namespace RPG.Combat
         float timeSinceLastAttack = Mathf.Infinity;
         void Start()
         {
-            EquipWeapon(defaultweapon);
+            if (currentWeapon == null)
+            {
+                EquipWeapon(defaultweapon);
+            }
+            
         }
         void Update()
         {
@@ -109,5 +114,17 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
+        public object CaptureState()
+        {
+            if (currentWeapon == null) return "Unarmed";
+            return currentWeapon.name;
+
+        }
+
+        public void RestoreState(object weaponState)
+        {
+            Weapon weapon = Resources.Load<Weapon>((string)weaponState);
+            EquipWeapon(weapon);
+        }
     }
 }
