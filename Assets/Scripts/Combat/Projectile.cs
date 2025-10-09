@@ -1,5 +1,7 @@
 using RPG.Attributes;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 namespace RPG.Combat
 {
     public class Projectile : MonoBehaviour
@@ -11,6 +13,8 @@ namespace RPG.Combat
         [SerializeField] float maxLifeTime = 10f;
         [SerializeField] float lifeAfterImpact = 1f;
         [SerializeField] GameObject[] destroyOnHit = null;
+        [SerializeField] UnityEvent projectileHit = null;
+        [SerializeField] GameObject spellHead = null;
         float damage = 0;
 
         Health target = null;
@@ -53,29 +57,52 @@ namespace RPG.Combat
             if (targetHealth != null)
             {
                 if (targetHealth.IsDead()) return;
+                
                 if (targetHealth != instigator.GetComponent<Health>())
                 {
+                    projectileHit.Invoke();
+                    DisbleMeshAndCollider();
+
                     speed = 0;
-                    targetHealth.TakeDamage(instigator,damage);
+                    targetHealth.TakeDamage(instigator, damage);
+
                     if (hitEffect != null)
                     {
                         Instantiate(hitEffect, transform.position, transform.rotation);
+
                     }
                     foreach (GameObject toDestroy in destroyOnHit)
                     {
                         Destroy(toDestroy);
                     }
-                    Destroy(gameObject, lifeAfterImpact);
+                    Destroy(gameObject, 2);
                 }
             }
             if (other.tag.Equals("Environment"))
             {
+                projectileHit.Invoke();
+                DisbleMeshAndCollider();
                 speed = 0;
                 foreach (GameObject toDestroy in destroyOnHit)
                 {
                     Destroy(toDestroy);
                 }
-                Destroy(gameObject, lifeAfterImpact);
+                
+                Destroy(gameObject, 2);
+            }
+        }
+
+        private void DisbleMeshAndCollider()
+        {
+            if (GetComponentInChildren<MeshRenderer>() != null)
+            {
+                GetComponent<Collider>().enabled = false;
+                GetComponentInChildren<MeshRenderer>().enabled = false;
+                //print("Disable mesh");
+            }
+            else
+            {
+                spellHead.SetActive(false);
             }
         }
     }

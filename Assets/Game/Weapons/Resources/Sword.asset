@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb17f4a2bcc154e4cb82fc2f85a34141, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::RPG.Combat.Weapon
-  weaponPrefab: {fileID: 6240055510349347996, guid: 09c37951498da494db531c4f17136dc6, type: 3}
+  weaponPrefab: {fileID: 2142744460190445222, guid: 09c37951498da494db531c4f17136dc6, type: 3}
   weaponOverride: {fileID: 22100000, guid: 6332c6d7f1c09c7419435de56b6ef58d, type: 2}
   weaponRange: 2
   timeBetweenAttack: 1
-  weaponDamage: 15
+  weaponDamage: 50
+  weaponPercentageBonus: 20
   isRightHand: 1
   projectile: {fileID: 0}

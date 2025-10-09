@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb17f4a2bcc154e4cb82fc2f85a34141, type: 3}
   m_Name: Unarmed
   m_EditorClassIdentifier: Assembly-CSharp::RPG.Combat.Weapon
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 2142744460190445222, guid: 82c89dafd93c33241998661d684899ff, type: 3}
   weaponOverride: {fileID: 0}
   weaponRange: 2
   timeBetweenAttack: 1
   weaponDamage: 5
+  weaponPercentageBonus: 1
   isRightHand: 1
   projectile: {fileID: 0}

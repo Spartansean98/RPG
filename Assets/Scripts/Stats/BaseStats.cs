@@ -1,6 +1,7 @@
 using System;
 using RPG.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 namespace RPG.Stats
 {
     public class BaseStats : MonoBehaviour
@@ -12,6 +13,7 @@ namespace RPG.Stats
         [SerializeField] GameObject levelUpEffect = null;
         [SerializeField] bool shouldUseModifiers = false;
         public event Action onLevelUp;
+        [SerializeField] UnityEvent levelUp;
         LazyValue<int> currentLevel;
 
         Experience experience;
@@ -46,6 +48,7 @@ namespace RPG.Stats
             {
                 currentLevel.value = newLevel;
                 LevelUpEffect();
+                levelUp.Invoke();
                 onLevelUp();
             }
         }

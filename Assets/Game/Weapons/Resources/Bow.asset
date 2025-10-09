@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb17f4a2bcc154e4cb82fc2f85a34141, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: Assembly-CSharp::RPG.Combat.Weapon
-  weaponPrefab: {fileID: 2182806426061008115, guid: 45b2700f94a9bdb488576fa8a1583754, type: 3}
+  weaponPrefab: {fileID: -7000670891194828320, guid: 45b2700f94a9bdb488576fa8a1583754, type: 3}
   weaponOverride: {fileID: 22100000, guid: 725ed38cafd9d0448b6416fe2fb9b10a, type: 2}
-  weaponRange: 20
+  weaponRange: 18
   timeBetweenAttack: 1
   weaponDamage: 20
   weaponPercentageBonus: 10

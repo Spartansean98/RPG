@@ -25,6 +25,10 @@ PrefabInstance:
       value: EnemyArcher
       objectReference: {fileID: 0}
     - target: {fileID: 4015436818340068248, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: dcba0b88b6ae5f04e8ed12d78b554c26, type: 2}
+    - target: {fileID: 4015436818340068248, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
       propertyPath: defaultweapon
       value: 
       objectReference: {fileID: 11400000, guid: 0bc97b684878a1a4e91a7d02dcc4f5c2, type: 2}
@@ -74,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8798719090947524023, guid: 12218e75ee4146a4389ea3646aea8ac8, type: 3}
       propertyPath: uniqueIdentifier
-      value: 9a0fe1a2-967a-4191-9a35-c83c25f5bb2a
+      value: dfc19038-433b-404a-b351-bf9693d9bda3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

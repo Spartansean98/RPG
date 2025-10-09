@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4694989131593927628, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5337674507030051806, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
       propertyPath: m_Name
       value: ArrowProjectile Red
@@ -74,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555815467028205216, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
       propertyPath: lifeAfterImpact
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7555815467028205216, guid: f84b514e484459442b8222dd0db9fd49, type: 3}
       propertyPath: destroyOnHit.Array.size

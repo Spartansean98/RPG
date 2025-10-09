@@ -3,12 +3,22 @@ using RPG.Stats;
 using RPG.Core;
 using UnityEngine;
 using RPG.Utils;
+using UnityEngine.Events;
+using System;
 namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [Range(1,100)]
+        [Range(1, 100)]
         [SerializeField] float levelUpRestorePercent = 80;
+        [SerializeField] TakeDamageEvent takeDamge;
+        [SerializeField] UnityEvent onDie;
+
+        [Serializable]
+        public class TakeDamageEvent : UnityEvent<float>
+        {
+        }
+        
         LazyValue<float> hp;  
         bool isDead = false;
 
@@ -39,24 +49,39 @@ namespace RPG.Attributes
                 hp.value = GetComponent<BaseStats>().GetStat(Stat.Health) * (levelUpRestorePercent / 100);
             }
         }
+        public void Heal(float healthToRestore)
+        {
+            hp.value = Mathf.Min(hp.value + healthToRestore, GetMaxHealthPoints());
+
+        }
         public bool IsDead()
         {
             return isDead;
         }
         public void TakeDamage(GameObject instigator,float damage)
         {
-            print(gameObject.name + " took damage : " + damage);
             hp.value = Mathf.Max(hp.value - damage, 0);
             if (hp.value == 0)
             {
+
+                onDie.Invoke();
                 AwardExperience(instigator);
                 Death();
+            }
+            else
+            {
+                takeDamge.Invoke(damage);
             }
         }
 
         public float GetPercentage()
         {
-            return hp.value / GetComponent<BaseStats>().GetStat(Stat.Health) * 100;
+            return GetFraction() * 100;
+        }
+
+        public float GetFraction()
+        {
+            return hp.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public float GetHealthPoints()
@@ -89,7 +114,7 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            return hp;
+            return hp.value;
         }
 
         public void RestoreState(object state)

@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using RPG.Saving;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
@@ -37,10 +37,18 @@ namespace RPG.SceneManagement
             {
                 Load();
             }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
             if (Input.GetKeyDown(KeyCode.Delete))
             {
                 print("Deleted Save File");
                 Delete();
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
 
@@ -49,9 +57,24 @@ namespace RPG.SceneManagement
             GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
 
+        private void Reload()
+        {
+            StartCoroutine(ReloadScene());
+        }
+
+        private IEnumerator ReloadScene()
+        {
+            Fader fader = FindAnyObjectByType<Fader>();
+            yield return fader.FadeOut(fadeWaitTime);
+            yield return SceneManager.LoadSceneAsync(0);
+            fader.FadeIn(fadeInTime);
+        }
+
         public void Load()
         {
+            
             GetComponent<SavingSystem>().Load(defaultSaveFile);
+           
         }
 
         public void Save()
